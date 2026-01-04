@@ -36,12 +36,12 @@ const content = `/**
 // Export individual flag SVG paths as constants
 ${files.map(code => {
   const upper = code.toUpperCase();
-  return `export const ${upper} = 'easy-country-icon/svg-icons/flags/${code}.svg' as const;`;
+  return `export const ${upper} = 'easy-country-icon/dist/svg-icons/flags/${code}.svg' as const;`;
 }).join('\n')}
 
 // Export country code mapping
 export const SVG_FILES: Record<string, string> = {
-${files.map(code => `  ${code.toUpperCase()}: 'easy-country-icon/svg-icons/flags/${code}.svg',`).join('\n')}
+${files.map(code => `  ${code.toUpperCase()}: 'easy-country-icon/dist/svg-icons/flags/${code}.svg',`).join('\n')}
 };
 
 /**

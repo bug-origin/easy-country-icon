@@ -14,5 +14,5 @@ export function getCountrySvg(code?: string): string | string[] {
   if (!code) return Object.keys(countries);
   const upperCode = code.toUpperCase();
   if (!countries[upperCode]) return '';
-  return `easy-country-icon/svg-icons/flags/${upperCode}.svg`;
+  return `easy-country-icon/dist/svg-icons/flags/${upperCode}.svg`;
 }

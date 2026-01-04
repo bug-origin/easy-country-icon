@@ -63,7 +63,7 @@ import { US, CN, JP } from 'easy-country-icon/svg-icons';
 
 ```typescript
 import { getCountrySvg } from 'easy-country-icon/svg';
-getCountrySvg('JP'); // 'easy-country-icon/svg-icons/flags/JP.svg'
+getCountrySvg('JP'); // 'easy-country-icon/dist/svg-icons/flags/JP.svg'
 getCountrySvg(); // ['AD', 'AE', ...] all codes
 ```
 
@@ -95,7 +95,7 @@ Get SVG path or all codes.
 
 ```typescript
 import { getCountrySvg } from 'easy-country-icon/svg';
-getCountrySvg('JP') // 'easy-country-icon/svg-icons/flags/JP.svg'
+getCountrySvg('JP') // 'easy-country-icon/dist/svg-icons/flags/JP.svg'
 getCountrySvg() // ['AD', 'AE', 'AF', ...]
 ```
 
@@ -103,7 +103,7 @@ getCountrySvg() // ['AD', 'AE', 'AF', ...]
 
 ```typescript
 import { US, CN, JP } from 'easy-country-icon/svg-icons';
-// US = 'easy-country-icon/svg-icons/flags/US.svg'
+// US = 'easy-country-icon/dist/svg-icons/flags/US.svg'
 ```
 
 ## 🌍 Supported Countries
