@@ -12,16 +12,16 @@ A lightweight country icons library with emoji and SVG support, fully tree-shaka
 ## 🎨 Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/US.svg" width="48" alt="US" title="United States"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/CN.svg" width="48" alt="CN" title="China"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/GB.svg" width="48" alt="GB" title="United Kingdom"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/JP.svg" width="48" alt="JP" title="Japan"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/DE.svg" width="48" alt="DE" title="Germany"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/FR.svg" width="48" alt="FR" title="France"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/CA.svg" width="48" alt="CA" title="Canada"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/AU.svg" width="48" alt="AU" title="Australia"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/BR.svg" width="48" alt="BR" title="Brazil"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/svg-icons/flags/IN.svg" width="48" alt="IN" title="India"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/US.svg" width="48" alt="US" title="United States"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/CN.svg" width="48" alt="CN" title="China"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/GB.svg" width="48" alt="GB" title="United Kingdom"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/JP.svg" width="48" alt="JP" title="Japan"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/DE.svg" width="48" alt="DE" title="Germany"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/FR.svg" width="48" alt="FR" title="France"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/CA.svg" width="48" alt="CA" title="Canada"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/AU.svg" width="48" alt="AU" title="Australia"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/BR.svg" width="48" alt="BR" title="Brazil"/>
+  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/IN.svg" width="48" alt="IN" title="India"/>
 </p>
 
 ## ✨ Features

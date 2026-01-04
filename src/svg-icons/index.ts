@@ -1,7 +1,7 @@
 /**
  * SVG Icons Index
  * Auto-generated exports for all flag SVG files
- * Generated on: 2026-01-04T14:05:42.876Z
+ * Generated on: 2026-01-04T14:13:40.827Z
  * 
  * Usage:
  * import { US, CN, JP } from 'easy-country-icon/svg-icons';
