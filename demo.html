@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>easy-country-icon Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    h1 {
+      color: #667eea;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    
+    .subtitle {
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    
+    .search-box {
+      margin-bottom: 2rem;
+    }
+    
+    input {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 0.5rem;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .country-card {
+      padding: 1.5rem;
+      border: 2px solid #f0f0f0;
+      border-radius: 0.5rem;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .country-card:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    }
+    
+    .flag {
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .country-name {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+    
+    .country-code {
+      font-size: 0.9rem;
+      color: #999;
+    }
+    
+    .stats {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .stat-label {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .popular {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .popular-flag {
+      font-size: 3rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .popular-flag:hover {
+      background: #667eea;
+      transform: scale(1.1);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 easy-country-icon</h1>
+    <p class="subtitle">轻量级国家图标库演示 - 支持按需引入和Tree Shaking</p>
+    
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value" id="totalCountries">194</div>
+        <div class="stat-label">总国家数</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">~5KB</div>
+        <div class="stat-label">仅Emoji模式</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">0</div>
+        <div class="stat-label">外部依赖</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">🔥 热门国家</h2>
+    <div class="popular" id="popularCountries"></div>
+    
+    <h2 class="section-title">🔍 搜索国家</h2>
+    <div class="search-box">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="搜索国家名称或代码... (例如: China, US, Japan)"
+      />
+    </div>
+    
+    <div class="grid" id="countriesGrid"></div>
+  </div>
+  
+  <script type="module">
+    // 模拟导入 easy-country-icon (在实际使用中会从npm包导入)
+    const countries = [
+      { code: 'US', name: 'United States', emoji: '🇺🇸' },
+      { code: 'CN', name: 'China', emoji: '🇨🇳' },
+      { code: 'JP', name: 'Japan', emoji: '🇯🇵' },
+      { code: 'GB', name: 'United Kingdom', emoji: '🇬🇧' },
+      { code: 'DE', name: 'Germany', emoji: '🇩🇪' },
+      { code: 'FR', name: 'France', emoji: '🇫🇷' },
+      { code: 'IT', name: 'Italy', emoji: '🇮🇹' },
+      { code: 'ES', name: 'Spain', emoji: '🇪🇸' },
+      { code: 'CA', name: 'Canada', emoji: '🇨🇦' },
+      { code: 'AU', name: 'Australia', emoji: '🇦🇺' },
+      { code: 'KR', name: 'South Korea', emoji: '🇰🇷' },
+      { code: 'IN', name: 'India', emoji: '🇮🇳' },
+      { code: 'BR', name: 'Brazil', emoji: '🇧🇷' },
+      { code: 'RU', name: 'Russia', emoji: '🇷🇺' },
+      { code: 'MX', name: 'Mexico', emoji: '🇲🇽' },
+    ];
+    
+    const popularCodes = ['US', 'CN', 'GB', 'JP', 'DE', 'FR', 'CA', 'AU'];
+    const popularContainer = document.getElementById('popularCountries');
+    const grid = document.getElementById('countriesGrid');
+    const searchInput = document.getElementById('searchInput');
+    
+    // 渲染热门国家
+    function renderPopular() {
+      popularContainer.innerHTML = popularCodes
+        .map(code => {
+          const country = countries.find(c => c.code === code);
+          return `<div class="popular-flag" title="${country?.name}">${country?.emoji}</div>`;
+        })
+        .join('');
+    }
+    
+    // 渲染国家网格
+    function renderCountries(list) {
+      grid.innerHTML = list
+        .map(country => `
+          <div class="country-card">
+            <span class="flag">${country.emoji}</span>
+            <div class="country-name">${country.name}</div>
+            <div class="country-code">${country.code}</div>
+          </div>
+        `)
+        .join('');
+    }
+    
+    // 搜索功能
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      if (!query) {
+        renderCountries(countries);
+        return;
+      }
+      
+      const filtered = countries.filter(country => 
+        country.name.toLowerCase().includes(query) ||
+        country.code.toLowerCase().includes(query)
+      );
+      renderCountries(filtered);
+    });
+    
+    // 初始化
+    renderPopular();
+    renderCountries(countries);
+  </script>
+</body>
+</html>

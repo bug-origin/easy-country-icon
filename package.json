@@ -1,0 +1,76 @@
+{
+  "name": "easy-country-icon",
+  "version": "1.0.0",
+  "description": "Lightweight country icons library with emoji and SVG support, tree-shakable",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/easy-country-icon.git"
+  },
+  "homepage": "https://github.com/yourusername/easy-country-icon#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/easy-country-icon/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./emoji": {
+      "types": "./dist/emoji.d.ts",
+      "import": "./dist/emoji.mjs",
+      "require": "./dist/emoji.js"
+    },
+    "./svg": {
+      "types": "./dist/svg.d.ts",
+      "import": "./dist/svg.mjs",
+      "require": "./dist/svg.js"
+    },
+    "./svg-icons": {
+      "types": "./dist/svg-icons/index.d.ts",
+      "import": "./dist/svg-icons/index.mjs",
+      "require": "./dist/svg-icons/index.js"
+    },
+    "./svg-icons/flags/*.svg": "./dist/svg-icons/flags/*.svg"
+  },
+  "files": [
+    "dist",
+    "ATTRIBUTION.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run generate-svg-index && tsup && node scripts/copy-svg.js",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit",
+    "generate-svg-index": "node scripts/generate-svg-index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "country",
+    "flag",
+    "emoji",
+    "svg",
+    "icon",
+    "tree-shaking",
+    "lightweight",
+    "country-flags",
+    "country-codes",
+    "iso-3166",
+    "react",
+    "vue",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
