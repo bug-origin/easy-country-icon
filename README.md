@@ -5,9 +5,9 @@ A lightweight country icons library with emoji and SVG support, fully tree-shaka
 [![npm version](https://img.shields.io/npm/v/easy-country-icon.svg)](https://www.npmjs.com/package/easy-country-icon)
 [![npm downloads](https://img.shields.io/npm/dm/easy-country-icon.svg)](https://www.npmjs.com/package/easy-country-icon)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/easy-country-icon)](https://bundlephobia.com/package/easy-country-icon)
-[![license](https://img.shields.io/npm/l/easy-country-icon.svg)](https://github.com/yourusername/easy-country-icon/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/easy-country-icon.svg)](https://github.com/bug-origin/easy-country-icon/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
-[![CI](https://github.com/yourusername/easy-country-icon/workflows/CI/badge.svg)](https://github.com/yourusername/easy-country-icon/actions)
+[![CI](https://github.com/bug-origin/easy-country-icon/workflows/CI/badge.svg)](https://github.com/bug-origin/easy-country-icon/actions)
 
 ## ✨ Features
 
