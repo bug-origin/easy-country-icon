@@ -1,7 +1,7 @@
 /**
  * SVG Icons Index
  * Auto-generated exports for all flag SVG files
- * Generated on: 2026-01-04T14:13:40.827Z
+ * Generated on: 2026-01-04T14:19:12.514Z
  * 
  * Usage:
  * import { US, CN, JP } from 'easy-country-icon/svg-icons';
@@ -44,6 +44,7 @@ export const CG = 'easy-country-icon/svg-icons/flags/CG.svg' as const;
 export const CH = 'easy-country-icon/svg-icons/flags/CH.svg' as const;
 export const CL = 'easy-country-icon/svg-icons/flags/CL.svg' as const;
 export const CM = 'easy-country-icon/svg-icons/flags/CM.svg' as const;
+export const CN = 'easy-country-icon/svg-icons/flags/CN.svg' as const;
 export const CO = 'easy-country-icon/svg-icons/flags/CO.svg' as const;
 export const CR = 'easy-country-icon/svg-icons/flags/CR.svg' as const;
 export const CU = 'easy-country-icon/svg-icons/flags/CU.svg' as const;
@@ -91,6 +92,7 @@ export const IS = 'easy-country-icon/svg-icons/flags/IS.svg' as const;
 export const IT = 'easy-country-icon/svg-icons/flags/IT.svg' as const;
 export const JM = 'easy-country-icon/svg-icons/flags/JM.svg' as const;
 export const JO = 'easy-country-icon/svg-icons/flags/JO.svg' as const;
+export const JP = 'easy-country-icon/svg-icons/flags/JP.svg' as const;
 export const KE = 'easy-country-icon/svg-icons/flags/KE.svg' as const;
 export const KG = 'easy-country-icon/svg-icons/flags/KG.svg' as const;
 export const KH = 'easy-country-icon/svg-icons/flags/KH.svg' as const;
@@ -199,9 +201,7 @@ export const YE = 'easy-country-icon/svg-icons/flags/YE.svg' as const;
 export const ZA = 'easy-country-icon/svg-icons/flags/ZA.svg' as const;
 export const ZM = 'easy-country-icon/svg-icons/flags/ZM.svg' as const;
 export const ZW = 'easy-country-icon/svg-icons/flags/ZW.svg' as const;
-export const CN = 'easy-country-icon/svg-icons/flags/cn.svg' as const;
 export const GB = 'easy-country-icon/svg-icons/flags/gb.svg' as const;
-export const JP = 'easy-country-icon/svg-icons/flags/jp.svg' as const;
 export const US = 'easy-country-icon/svg-icons/flags/us.svg' as const;
 
 // Export country code mapping
@@ -241,6 +241,7 @@ export const SVG_FILES: Record<string, string> = {
   CH: 'easy-country-icon/svg-icons/flags/CH.svg',
   CL: 'easy-country-icon/svg-icons/flags/CL.svg',
   CM: 'easy-country-icon/svg-icons/flags/CM.svg',
+  CN: 'easy-country-icon/svg-icons/flags/CN.svg',
   CO: 'easy-country-icon/svg-icons/flags/CO.svg',
   CR: 'easy-country-icon/svg-icons/flags/CR.svg',
   CU: 'easy-country-icon/svg-icons/flags/CU.svg',
@@ -288,6 +289,7 @@ export const SVG_FILES: Record<string, string> = {
   IT: 'easy-country-icon/svg-icons/flags/IT.svg',
   JM: 'easy-country-icon/svg-icons/flags/JM.svg',
   JO: 'easy-country-icon/svg-icons/flags/JO.svg',
+  JP: 'easy-country-icon/svg-icons/flags/JP.svg',
   KE: 'easy-country-icon/svg-icons/flags/KE.svg',
   KG: 'easy-country-icon/svg-icons/flags/KG.svg',
   KH: 'easy-country-icon/svg-icons/flags/KH.svg',
@@ -396,9 +398,7 @@ export const SVG_FILES: Record<string, string> = {
   ZA: 'easy-country-icon/svg-icons/flags/ZA.svg',
   ZM: 'easy-country-icon/svg-icons/flags/ZM.svg',
   ZW: 'easy-country-icon/svg-icons/flags/ZW.svg',
-  CN: 'easy-country-icon/svg-icons/flags/cn.svg',
   GB: 'easy-country-icon/svg-icons/flags/gb.svg',
-  JP: 'easy-country-icon/svg-icons/flags/jp.svg',
   US: 'easy-country-icon/svg-icons/flags/us.svg',
 };
 
