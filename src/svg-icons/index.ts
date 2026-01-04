@@ -1,7 +1,7 @@
 /**
  * SVG Icons Index
  * Auto-generated exports for all flag SVG files
- * Generated on: 2026-01-04T14:19:12.514Z
+ * Generated on: 2026-01-04T14:23:42.978Z
  * 
  * Usage:
  * import { US, CN, JP } from 'easy-country-icon/svg-icons';
@@ -68,6 +68,7 @@ export const FJ = 'easy-country-icon/svg-icons/flags/FJ.svg' as const;
 export const FM = 'easy-country-icon/svg-icons/flags/FM.svg' as const;
 export const FR = 'easy-country-icon/svg-icons/flags/FR.svg' as const;
 export const GA = 'easy-country-icon/svg-icons/flags/GA.svg' as const;
+export const GB = 'easy-country-icon/svg-icons/flags/GB.svg' as const;
 export const GD = 'easy-country-icon/svg-icons/flags/GD.svg' as const;
 export const GE = 'easy-country-icon/svg-icons/flags/GE.svg' as const;
 export const GH = 'easy-country-icon/svg-icons/flags/GH.svg' as const;
@@ -189,6 +190,7 @@ export const TW = 'easy-country-icon/svg-icons/flags/TW.svg' as const;
 export const TZ = 'easy-country-icon/svg-icons/flags/TZ.svg' as const;
 export const UA = 'easy-country-icon/svg-icons/flags/UA.svg' as const;
 export const UG = 'easy-country-icon/svg-icons/flags/UG.svg' as const;
+export const US = 'easy-country-icon/svg-icons/flags/US.svg' as const;
 export const UY = 'easy-country-icon/svg-icons/flags/UY.svg' as const;
 export const UZ = 'easy-country-icon/svg-icons/flags/UZ.svg' as const;
 export const VA = 'easy-country-icon/svg-icons/flags/VA.svg' as const;
@@ -201,8 +203,6 @@ export const YE = 'easy-country-icon/svg-icons/flags/YE.svg' as const;
 export const ZA = 'easy-country-icon/svg-icons/flags/ZA.svg' as const;
 export const ZM = 'easy-country-icon/svg-icons/flags/ZM.svg' as const;
 export const ZW = 'easy-country-icon/svg-icons/flags/ZW.svg' as const;
-export const GB = 'easy-country-icon/svg-icons/flags/gb.svg' as const;
-export const US = 'easy-country-icon/svg-icons/flags/us.svg' as const;
 
 // Export country code mapping
 export const SVG_FILES: Record<string, string> = {
@@ -265,6 +265,7 @@ export const SVG_FILES: Record<string, string> = {
   FM: 'easy-country-icon/svg-icons/flags/FM.svg',
   FR: 'easy-country-icon/svg-icons/flags/FR.svg',
   GA: 'easy-country-icon/svg-icons/flags/GA.svg',
+  GB: 'easy-country-icon/svg-icons/flags/GB.svg',
   GD: 'easy-country-icon/svg-icons/flags/GD.svg',
   GE: 'easy-country-icon/svg-icons/flags/GE.svg',
   GH: 'easy-country-icon/svg-icons/flags/GH.svg',
@@ -386,6 +387,7 @@ export const SVG_FILES: Record<string, string> = {
   TZ: 'easy-country-icon/svg-icons/flags/TZ.svg',
   UA: 'easy-country-icon/svg-icons/flags/UA.svg',
   UG: 'easy-country-icon/svg-icons/flags/UG.svg',
+  US: 'easy-country-icon/svg-icons/flags/US.svg',
   UY: 'easy-country-icon/svg-icons/flags/UY.svg',
   UZ: 'easy-country-icon/svg-icons/flags/UZ.svg',
   VA: 'easy-country-icon/svg-icons/flags/VA.svg',
@@ -398,8 +400,6 @@ export const SVG_FILES: Record<string, string> = {
   ZA: 'easy-country-icon/svg-icons/flags/ZA.svg',
   ZM: 'easy-country-icon/svg-icons/flags/ZM.svg',
   ZW: 'easy-country-icon/svg-icons/flags/ZW.svg',
-  GB: 'easy-country-icon/svg-icons/flags/gb.svg',
-  US: 'easy-country-icon/svg-icons/flags/us.svg',
 };
 
 /**
