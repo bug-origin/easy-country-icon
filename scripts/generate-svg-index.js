@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 
 /**
- * Generate svg-icons/index.ts from available SVG files
- * Run this after adding new SVG files to auto-update the exports
+ * Generate svg-icons/index.ts with inline data URLs
+ * Supports tree-shaking when using named imports
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const flagsDir = path.join(__dirname, '../src/svg-icons/flags');
 const outputFile = path.join(__dirname, '../src/svg-icons/index.ts');
 
@@ -22,57 +24,52 @@ if (files.length === 0) {
   process.exit(0);
 }
 
-// Generate TypeScript content
-const content = `/**
- * SVG Icons Index
- * Auto-generated exports for all flag SVG files
- * Generated on: ${new Date().toISOString()}
- * 
- * Usage:
- * import { US, CN, JP } from 'easy-country-icon/svg-icons';
- * // <img src={US} alt="US Flag" />
- */
+// Convert SVG to data URL
+function svgToDataUrl(svgContent) {
+  const encoded = encodeURIComponent(svgContent.trim())
+    .replace(/'/g, '%27')
+    .replace(/"/g, '%22');
+  return `data:image/svg+xml,${encoded}`;
+}
 
-// Export individual flag SVG paths as constants
-${files.map(code => {
+// Generate exports
+const exportsCode = files.map(code => {
   const upper = code.toUpperCase();
-  return `export const ${upper} = 'easy-country-icon/dist/svg-icons/flags/${code}.svg' as const;`;
-}).join('\n')}
+  const svgPath = path.join(flagsDir, `${code}.svg`);
+  const svgContent = fs.readFileSync(svgPath, 'utf-8');
+  const dataUrl = svgToDataUrl(svgContent);
+  return `export const ${upper} = '${dataUrl}';`;
+}).join('\n');
 
-// Export country code mapping
-export const SVG_FILES: Record<string, string> = {
-${files.map(code => `  ${code.toUpperCase()}: 'easy-country-icon/dist/svg-icons/flags/${code}.svg',`).join('\n')}
-};
-
-/**
- * Get SVG file path by country code
- * @param code - ISO 3166-1 alpha-2 country code
- * @returns SVG file path or undefined
+const content = `/**
+ * Country Flag Data URLs
+ * Auto-generated - supports tree-shaking
+ *
+ * Usage:
+ * import { US, CN } from 'easy-country-icon/svg-icons';
+ * <img src={US} />
+ *
+ * Or dynamic:
+ * import { getCountry } from 'easy-country-icon/svg-icons';
+ * <img src={getCountry('US')} />
  */
-export function getSVGPath(code: string): string | undefined {
-  return SVG_FILES[code.toUpperCase()];
+
+${exportsCode}
+
+const flags: Record<string, string> = { ${files.map(c => c.toUpperCase()).join(', ')} };
+
+export function getCountry(code: string): string {
+  return flags[code.toUpperCase()] || '';
 }
 
-/**
- * Check if SVG exists for country code
- * @param code - ISO 3166-1 alpha-2 country code
- * @returns boolean
- */
-export function hasSVG(code: string): boolean {
-  return code.toUpperCase() in SVG_FILES;
+export function hasCountry(code: string): boolean {
+  return code.toUpperCase() in flags;
 }
 
-/**
- * Get all available SVG country codes
- * @returns Array of country codes that have SVG files
- */
-export function getAvailableSVGCodes(): string[] {
-  return Object.keys(SVG_FILES);
+export function getAllCodes(): string[] {
+  return Object.keys(flags);
 }
 `;
 
-// Write to file
 fs.writeFileSync(outputFile, content, 'utf-8');
-
-console.log(`✅ Generated svg-icons/index.ts with ${files.length} SVG exports:`);
-console.log(`   ${files.map(f => f.toUpperCase()).join(', ')}`);
+console.log(`✅ Generated ${files.length} flag data URLs`);

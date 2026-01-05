@@ -4,15 +4,12 @@
  */
 
 // Export emoji functions
-export {
-  getCountryEmoji,
-  hasCountry,
-} from './emoji';
+export { getCountryEmoji, hasCountry } from './emoji';
 
-// Export SVG functions
-export {
-  getCountrySvg,
-} from './svg';
+// Export SVG data URLs (supports tree-shaking)
+export * from './svg-icons/index';
 
-// Note: SVG icons are available via separate import
-// import { CN, US, JP } from 'easy-country-icon/svg-icons';
+// Usage:
+// import { US, CN, getCountry } from 'easy-country-icon';
+// <img src={US} />              // tree-shakeable
+// <img src={getCountry('US')} /> // dynamic

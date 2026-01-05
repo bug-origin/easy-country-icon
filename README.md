@@ -1,15 +1,14 @@
-# easy-country-icon 🌍
+# easy-country-icon
 
-A lightweight country icons library with emoji and SVG support, fully tree-shakable and on-demand loading.
+A lightweight country icons library with emoji and SVG support, fully tree-shakable.
 
 [![npm version](https://img.shields.io/npm/v/easy-country-icon.svg)](https://www.npmjs.com/package/easy-country-icon)
 [![npm downloads](https://img.shields.io/npm/dm/easy-country-icon.svg)](https://www.npmjs.com/package/easy-country-icon)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/easy-country-icon)](https://bundlephobia.com/package/easy-country-icon)
 [![license](https://img.shields.io/npm/l/easy-country-icon.svg)](https://github.com/bug-origin/easy-country-icon/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
-[![CI](https://github.com/bug-origin/easy-country-icon/workflows/CI/badge.svg)](https://github.com/bug-origin/easy-country-icon/actions)
 
-## 🎨 Preview
+## Preview
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/US.svg" width="48" alt="US" title="United States"/>
@@ -20,170 +19,85 @@ A lightweight country icons library with emoji and SVG support, fully tree-shaka
   <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/FR.svg" width="48" alt="FR" title="France"/>
   <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/CA.svg" width="48" alt="CA" title="Canada"/>
   <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/AU.svg" width="48" alt="AU" title="Australia"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/BR.svg" width="48" alt="BR" title="Brazil"/>
-  <img src="https://raw.githubusercontent.com/bug-origin/easy-country-icon/main/src/svg-icons/flags/IN.svg" width="48" alt="IN" title="India"/>
 </p>
 
-## ✨ Features
+## Features
 
-- 🎯 **Zero Dependencies** - No external dependencies required
-- 🌳 **Tree Shaking** - Perfect support for on-demand imports, only bundle what you use
-- 🎨 **Dual Mode** - Support both native Emoji and high-quality SVG icons (based on [country-flag-icons](https://github.com/catamphetamine/country-flag-icons))
-- 📦 **Ultra Lightweight** - Core code only few KB, SVG loaded on-demand
-- 🔧 **TypeScript** - Full type definitions included
-- 🔤 **Case Insensitive** - Works with 'US', 'us', 'Us', etc. (all country code parameters)
-- 🌍 **Complete Coverage** - Emoji supports 194 countries, SVG supports 250+ countries
+- Zero dependencies
+- Tree-shakable - only bundle what you use
+- Dual mode - Emoji and SVG flags
+- TypeScript support
+- Case insensitive - works with 'US', 'us', 'Us'
+- 194 countries supported
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install easy-country-icon
 ```
 
-## 🪄 Super Easy Usage
+## Usage
 
-
-
-### Emoji Flag
+### SVG Flags (Recommended)
 
 ```typescript
-import { getCountryEmoji, hasCountry } from 'easy-country-icon/emoji';
-getCountryEmoji('US'); // 🇺🇸
-hasCountry('CN'); // true
-```
+// Static import - tree-shakable, only bundles US and CN (~2KB)
+import { US, CN } from 'easy-country-icon';
 
-### SVG Flag (Named Import)
+<img src={US} alt="US" />
+<img src={CN} alt="CN" />
+```
 
 ```typescript
-import { US, CN, JP } from 'easy-country-icon/svg-icons';
-// <img src={US} />
+// Dynamic import - bundles all flags (~160KB)
+import { getCountry } from 'easy-country-icon';
+
+<img src={getCountry('US')} alt="US" />
+<img src={getCountry(countryCode)} alt={countryCode} />
 ```
 
-### SVG Flag (Dynamic)
+### Emoji Flags
 
 ```typescript
-import { getCountrySvg } from 'easy-country-icon/svg';
-getCountrySvg('JP'); // 'easy-country-icon/dist/svg-icons/flags/JP.svg'
-getCountrySvg(); // ['AD', 'AE', ...] all codes
+import { getCountryEmoji, hasCountry } from 'easy-country-icon';
+
+getCountryEmoji('US');  // '🇺🇸'
+getCountryEmoji('cn');  // '🇨🇳'
+hasCountry('JP');       // true
 ```
 
+## API
 
-## 📋 API Documentation
+| Function | Description | Returns |
+|----------|-------------|---------|
+| `US`, `CN`, `JP`, ... | SVG data URL constants | `string` |
+| `getCountry(code)` | Get SVG data URL by code | `string` |
+| `getCountryEmoji(code)` | Get emoji flag | `string` |
+| `hasCountry(code)` | Check if country exists | `boolean` |
+| `getAllCodes()` | Get all country codes | `string[]` |
 
-### API
-
-#### `getCountryEmoji(code: string): string`
-Get emoji flag (case-insensitive).
+## Tree Shaking
 
 ```typescript
-import { getCountryEmoji } from 'easy-country-icon/emoji';
-getCountryEmoji('US') // '🇺🇸'
-getCountryEmoji('cn') // '🇨🇳'
+// Only US and CN are bundled (~2KB)
+import { US, CN } from 'easy-country-icon';
+
+// All flags are bundled (~160KB)
+import { getCountry } from 'easy-country-icon';
 ```
 
-#### `hasCountry(code: string): boolean`
-Check if country code exists.
+Use static imports when you know which countries you need. Use `getCountry()` when you need dynamic access.
 
-```typescript
-import { hasCountry } from 'easy-country-icon/emoji';
-hasCountry('US') // true
-hasCountry('XX') // false
-```
+## Supported Countries
 
-#### `getCountrySvg(code?: string): string | string[]`
-Get SVG path or all codes.
-
-```typescript
-import { getCountrySvg } from 'easy-country-icon/svg';
-getCountrySvg('JP') // 'easy-country-icon/dist/svg-icons/flags/JP.svg'
-getCountrySvg() // ['AD', 'AE', 'AF', ...]
-```
-
-#### Named SVG Exports
-
-```typescript
-import { US, CN, JP } from 'easy-country-icon/svg-icons';
-// US = 'easy-country-icon/dist/svg-icons/flags/US.svg'
-```
-
-## 🌍 Supported Countries
-
-Includes all 195 UN member states and observer states, using standard ISO 3166-1 alpha-2 codes:
-
-- `US` - United States 🇺🇸
-- `CN` - China 🇨🇳
-- `GB` - United Kingdom 🇬🇧
-- `JP` - Japan 🇯🇵
-- `DE` - Germany 🇩🇪
-- `FR` - France 🇫🇷
-- ... and many more
+All 194 UN member states using ISO 3166-1 alpha-2 codes.
 
 See full list at [countries.ts](./src/data/countries.ts)
 
-## 📦 Bundle Size
+## License
 
-- **Full Package**: ~800KB (includes 250+ SVG)
-- **Emoji Only**: ~5KB (minified + gzipped)
-- **On-demand SVG**: ~1-5KB each
+MIT
 
-With on-demand imports and Tree Shaking, actual bundle size will be much smaller!
+## Acknowledgments
 
-**Examples**:
-- Emoji only: ~3-5KB
-- 3 SVGs only: ~10-15KB
-- 10 SVGs only: ~30-50KB
-
-## 🔧 Tree Shaking
-
-```typescript
-// ✅ Only bundles what you import
-import { getCountryEmoji } from 'easy-country-icon/emoji';
-import { getCountrySvg } from 'easy-country-icon/svg';
-import { US, CN } from 'easy-country-icon/svg-icons';
-```
-
-## 🎯 Use Cases
-
-- 🗺️ Country selectors
-- 📱 Multi-language/multi-region switching
-- 🛒 E-commerce country shipping options
-- 📊 Country identification in data visualization
-- 🌐 Internationalization applications
-- 📞 Phone country code selectors
-
-## 🤝 Contributing
-
-Issues and Pull Requests are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## 📝 Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for details about changes in each version.
-
-## 🔒 Security
-
-See [SECURITY.md](SECURITY.md) for security policy and reporting vulnerabilities.
-
-## 📄 License
-
-MIT © [Your Name]
-
-## 🙏 Acknowledgments
-
-This project uses assets from the following sources:
-
-### SVG Flag Icons
-- **Source**: [country-flag-icons](https://github.com/catamphetamine/country-flag-icons) by Nicolay Kamenskov
-- **License**: MIT License
-- **Usage**: 250+ high-quality SVG flag icons included in `dist/svg-icons/flags/`
-- **Copyright**: © 2020 Nicolay Kamenskov
-
-### Emoji Flags
-- Based on Unicode Regional Indicator Symbols (part of Unicode Standard)
-- No additional attribution required
-
-### Full Attribution
-See [ATTRIBUTION.md](ATTRIBUTION.md) for complete third-party licenses and notices.
-
----
-
-**Note**: When redistributing this package or its SVG assets, please ensure you comply with the MIT License terms of country-flag-icons by retaining copyright notices.
+SVG flags from [country-flag-icons](https://github.com/catamphetamine/country-flag-icons) by Nicolay Kamenskov (MIT License).
