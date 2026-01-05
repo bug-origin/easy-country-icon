@@ -1,6 +1,6 @@
 {
   "name": "easy-country-icon",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Lightweight country icons library with emoji and SVG support, tree-shakable",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
